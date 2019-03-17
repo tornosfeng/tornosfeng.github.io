@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="python,老男孩python,学习教程,">
 
 
 
@@ -86,16 +86,20 @@
 
 
 
-<meta name="description" content="这是kyle的技术成长记录">
-<meta property="og:type" content="website">
-<meta property="og:title" content="kyle&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="1. 主要内容- args和*args的区别- 装饰器进阶 functools wraps 带参数的装饰器 多个装饰器装饰同一个参数  2. args和*args的区别123456789def outer(*args):    print(args)   # (1, 2, 3, 4)元组形式    print(*args)   # 打散 1, 2, 3, 4    def inner(*args)">
+<meta name="keywords" content="python,老男孩python,学习教程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="老男孩python DAY12笔记">
+<meta property="og:url" content="http://yoursite.com/20190317-老男孩python-DAY12笔记/index.html">
 <meta property="og:site_name" content="kyle&#39;s blog">
-<meta property="og:description" content="这是kyle的技术成长记录">
+<meta property="og:description" content="1. 主要内容- args和*args的区别- 装饰器进阶 functools wraps 带参数的装饰器 多个装饰器装饰同一个参数  2. args和*args的区别123456789def outer(*args):    print(args)   # (1, 2, 3, 4)元组形式    print(*args)   # 打散 1, 2, 3, 4    def inner(*args)">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/images/1.jpg">
+<meta property="og:updated_time" content="2019-03-17T12:28:57.916Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="kyle&#39;s blog">
-<meta name="twitter:description" content="这是kyle的技术成长记录">
+<meta name="twitter:title" content="老男孩python DAY12笔记">
+<meta name="twitter:description" content="1. 主要内容- args和*args的区别- 装饰器进阶 functools wraps 带参数的装饰器 多个装饰器装饰同一个参数  2. args和*args的区别123456789def outer(*args):    print(args)   # (1, 2, 3, 4)元组形式    print(*args)   # 打散 1, 2, 3, 4    def inner(*args)">
+<meta name="twitter:image" content="http://yoursite.com/images/1.jpg">
 
 
 
@@ -125,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/20190317-老男孩python-DAY12笔记/">
 
 
 
 
 
-  <title>kyle's blog</title>
+  <title>老男孩python DAY12笔记 | kyle's blog</title>
   
 
 
@@ -150,8 +154,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -244,9 +247,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -276,9 +279,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/20190317-老男孩python-DAY12笔记/" itemprop="url">老男孩python DAY12笔记</a></h1>
+          <h1 class="post-title" itemprop="name headline">老男孩python DAY12笔记</h1>
         
 
         <div class="post-meta">
@@ -350,9 +351,7 @@
       
 
       
-        
-          
-            <h1 id="1-主要内容"><a href="#1-主要内容" class="headerlink" title="1. 主要内容"></a>1. 主要内容</h1><h3 id="args和-args的区别"><a href="#args和-args的区别" class="headerlink" title="- args和*args的区别"></a>- <strong>args和*args的区别</strong></h3><h3 id="装饰器进阶"><a href="#装饰器进阶" class="headerlink" title="- 装饰器进阶"></a>- <strong>装饰器进阶</strong></h3><ul>
+        <h1 id="1-主要内容"><a href="#1-主要内容" class="headerlink" title="1. 主要内容"></a>1. 主要内容</h1><h3 id="args和-args的区别"><a href="#args和-args的区别" class="headerlink" title="- args和*args的区别"></a>- <strong>args和*args的区别</strong></h3><h3 id="装饰器进阶"><a href="#装饰器进阶" class="headerlink" title="- 装饰器进阶"></a>- <strong>装饰器进阶</strong></h3><ul>
 <li><strong>functools wraps</strong></li>
 <li><strong>带参数的装饰器</strong></li>
 <li><strong>多个装饰器装饰同一个参数</strong></li>
@@ -369,8 +368,6 @@
 <p>命令执行顺序如下：</p>
 <p><img src="/images/1.jpg" alt></p>
 
-          
-        
       
     </div>
     
@@ -385,261 +382,40 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/20190317-test1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Kyle">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kyle's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/20190317-test1/" itemprop="url">test1</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-17T16:46:38+08:00">
-                2019-03-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/python/" rel="tag"># python</a>
           
-            
+            <a href="/tags/老男孩python/" rel="tag"># 老男孩python</a>
           
-
+            <a href="/tags/学习教程/" rel="tag"># 学习教程</a>
           
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="标题1"><a href="#标题1" class="headerlink" title="标题1"></a>标题1</h1><h2 id="标题2"><a href="#标题2" class="headerlink" title="标题2"></a>标题2</h2><h3 id="标题3"><a href="#标题3" class="headerlink" title="标题3"></a>标题3</h3>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
       
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/20190317-hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Kyle">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kyle's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/20190317-hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-17T16:25:43+08:00">
-                2019-03-17
-              </time>
+              <a href="/20190317-test1/" rel="next" title="test1">
+                <i class="fa fa-chevron-left"></i> test1
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -649,10 +425,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -660,6 +437,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -680,8 +461,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -741,6 +531,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-主要内容"><span class="nav-number">1.</span> <span class="nav-text">1. 主要内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#args和-args的区别"><span class="nav-number">1.0.1.</span> <span class="nav-text">- args和*args的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#装饰器进阶"><span class="nav-number">1.0.2.</span> <span class="nav-text">- 装饰器进阶</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#2-args和-args的区别"><span class="nav-number">2.</span> <span class="nav-text">2. args和*args的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-functools-wraps"><span class="nav-number">3.</span> <span class="nav-text">3. functools wraps</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-带参数的装饰器"><span class="nav-number">4.</span> <span class="nav-text">4. 带参数的装饰器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-多个装饰器装饰同一个函数"><span class="nav-number">5.</span> <span class="nav-text">5. 多个装饰器装饰同一个函数</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -879,6 +685,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
