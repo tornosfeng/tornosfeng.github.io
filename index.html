@@ -259,6 +259,202 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/20190329-老男孩python-DAY13笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kyle">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kyle's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/20190329-老男孩python-DAY13笔记/" itemprop="url">老男孩python DAY13笔记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-29T17:43:00+08:00">
+                2019-03-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  459
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="1-主要内容"><a href="#1-主要内容" class="headerlink" title="1. 主要内容"></a>1. 主要内容</h1><h3 id="迭代器"><a href="#迭代器" class="headerlink" title="- 迭代器"></a>- <strong>迭代器</strong></h3><h3 id="生成器"><a href="#生成器" class="headerlink" title="- 生成器"></a>- <strong>生成器</strong></h3><h1 id="2-迭代器"><a href="#2-迭代器" class="headerlink" title="2. 迭代器"></a>2. 迭代器</h1><h3 id="可迭代协议："><a href="#可迭代协议：" class="headerlink" title="- 可迭代协议："></a>- 可迭代协议：</h3><ul>
+<li><strong>只要含有双下划线<strong>iter</strong>方法的都是可迭代的</strong></li>
+<li><strong>可以被for循环的都是可迭代的，for循环其实就是在使用迭代器</strong></li>
+</ul>
+<h3 id="迭代器协议："><a href="#迭代器协议：" class="headerlink" title="- 迭代器协议："></a>- 迭代器协议：</h3><ul>
+<li><strong>内部含有<strong>iter</strong>和<strong>next</strong>方法的就是迭代器</strong></li>
+<li><strong>只要是迭代器，就一定可以迭代</strong></li>
+<li><strong>可迭代的.<strong>iter</strong>()方法就可以得到一个迭代器</strong></li>
+<li><strong>迭代器中的.<strong>next</strong>()方法可以一个一个的获取值</strong></li>
+</ul>
+<h3 id="迭代器的好处"><a href="#迭代器的好处" class="headerlink" title="- 迭代器的好处"></a>- 迭代器的好处</h3><ul>
+<li><strong>从容器类型中一个一个的获取值</strong></li>
+<li><strong>节省内存空间（需要时才会执行，每次<strong>next</strong>()生成一个值）</strong></li>
+</ul>
+<h3 id="判断可迭代和迭代器的一种方法"><a href="#判断可迭代和迭代器的一种方法" class="headerlink" title="- 判断可迭代和迭代器的一种方法"></a>- 判断可迭代和迭代器的一种方法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> Iterable</span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> Iterator</span><br><span class="line"><span class="comment"># print(isinstance([],Iterator))</span></span><br><span class="line"><span class="comment"># print(isinstance([],Iterable))</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># class A:</span></span><br><span class="line"><span class="comment">#     # def __iter__(self):pass</span></span><br><span class="line"><span class="comment">#     def __next__(self):pass</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># a = A()</span></span><br><span class="line"><span class="comment"># print(isinstance(a,Iterator))</span></span><br><span class="line"><span class="comment"># print(isinstance(a,Iterable))</span></span><br></pre></td></tr></table></figure>
+<h1 id="3-生成器"><a href="#3-生成器" class="headerlink" title="3. 生成器"></a>3. 生成器</h1><h3 id="生成器函数："><a href="#生成器函数：" class="headerlink" title="- 生成器函数："></a>- 生成器函数：</h3><ul>
+<li><strong>只要含有yield关键字的函数都是生成器函数</strong></li>
+<li><strong>yield不能和return共用，且需要写在函数内部</strong></li>
+<li><strong>调用生成器函数会得到一个生成器</strong><h3 id="生成器运行方式："><a href="#生成器运行方式：" class="headerlink" title="- 生成器运行方式："></a>- 生成器运行方式：</h3></li>
+<li><strong>通过<strong>next</strong>执行</strong></li>
+<li><strong>通过for循环执行</strong></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">generator</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">yield</span> <span class="string">'a'</span></span><br><span class="line">    print(<span class="number">2</span>)</span><br><span class="line">    <span class="keyword">yield</span> <span class="string">'b'</span></span><br><span class="line"><span class="comment"># 生成器函数：执行之后会得到一个生成器作为返回值</span></span><br><span class="line">g = generator()</span><br><span class="line"></span><br><span class="line"><span class="comment"># __next__方法运行生成器</span></span><br><span class="line">ret = g.__next__()</span><br><span class="line">print(ret)</span><br><span class="line">ret = g.__next__()</span><br><span class="line">print(ret)</span><br><span class="line"><span class="comment"># for 循环方法运行生成器</span></span><br><span class="line">g = generator()</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> g:</span><br><span class="line">	print(i)</span><br></pre></td></tr></table></figure>
+<h1 id="4-利用生成器监听文件输入的例子"><a href="#4-利用生成器监听文件输入的例子" class="headerlink" title="4. 利用生成器监听文件输入的例子"></a>4. 利用生成器监听文件输入的例子</h1><p>利用生成器的yield特性，不需要一次返回所有的值，只是将功能提供给用户，用户需要时进行循环输出或选择性输出。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">tail</span><span class="params">(filename)</span>:</span></span><br><span class="line">    f = open(filename,encoding=<span class="string">'utf-8'</span>)</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        line = f.readline()</span><br><span class="line">        <span class="keyword">if</span> line.strip():</span><br><span class="line">            <span class="keyword">yield</span> line.strip()</span><br><span class="line"></span><br><span class="line">g = tail(<span class="string">'file'</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> g:</span><br><span class="line">    <span class="keyword">if</span> <span class="string">'python'</span> <span class="keyword">in</span> i:</span><br><span class="line">        print(<span class="string">'***'</span>,i)</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/20190317-老男孩python-DAY12笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -714,7 +910,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -788,7 +984,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">2.3k</span>
+    <span title="Site words total count">2.8k</span>
   
 </div>
 <div class="powered-by">
